@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+/* #334257#476072#548CA8#EEEEEE #0F52BA*/
+/* #0B0C10 #1F2833 #C5C6C7 #45A29E #66FCF1*/
+body{
+    background-color: #0B0C10;
+}
+nav{
+    color: #66FCF1;
+}
+.bottom-content{
+    display: inline;
+    font-size: 0.95rem;
+    color: white;
+}
+.notfound{
+    position:fixed;
+    top:0;
+    height:100vh;
+    width:100vw;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1;
+}
+.logo{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 2rem;
+}
+
+.small-size{
+    font-size: 1.1rem;
+}
+.action-img{
+    height: 80%;
+    width: 100%;
+}
+input{
+    margin-left: 10px;
+    width: 80%;
+    background-color: inherit;
+    border: hidden!important;
+    border-bottom: 2px groove!important;
+}
+input[type=file]{
+    border: 0 !important;
+}
+input:focus{
+    outline: none!important;
+    background-color: inherit;
+}
+.nav-link{
+    font-weight: bolder;
+    font-size: 1rem;
+    text-align: center;
+    color: #C5C6C7;
+    font-family: 'Noto Sans Mono', monospace;
+}
+.nav-link:focus{
+    color: #66FCF1;
+}
+.nav-link:active{
+    color: #66FCF1;
+}
+.nav-link:hover{
+    color: #66FCF1;
+}
+textarea{
+    width: 89%!important;
+    border: 2px groove!important;
+    background-color: inherit !important;
+}
+
+
+/* #0B0C10 #1F2833 #C5C6C7 #45A29E #66FCF1*/
+.disp-box{
+    word-wrap: break-word;
+    width: 60%;
+    margin: auto;
+    margin-top: 3%;
+}
+.disp-ans-box{
+    word-wrap: break-word;
+    width: 95%;
+    margin-left: 5%;
+    border-radius: 5px;
+    border: 2px solid #1F2833;
+    margin-top: 3%;
+}
+.head-content{
+    padding: 1%;
+    margin-top: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color:#66FCF1;
+    font-size: 1.3rem;
+}
+.disp-content{
+    padding: 1%;
+    color: white;
+    font-size: 1.1rem;
+}
+.disp-user{
+    width: 85%;
+    display: inline-block;
+    text-align: right;
+    font-size: 0.95rem;
+    font-weight: bolder;
+    color: white;
+}
+.disp-date{
+    font-weight: normal;
+    color: white;
+}
+
+
+/*post*/
+.post-box{
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+}
+.post-form{
+    font-size: 1.3rem;
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+input{
+    color: white;
+}
+textarea{
+    color: white !important;
+    border: 1px solid white !important;
+    resize: none;
+}
+textarea:focus{
+    border:none !important;
+    box-shadow: none !important;
+}
+.disp-button{
+    padding:10px;
+    margin-left: 10px;
+    border: 0;
+    background-color: #0B0C10;
+    color: #1F2833;
+}
+.answer-button{
+    padding:5px;
+    margin:4px;
+    color: #1F2833;
+    border-radius: 5px;
+    background-color: #66FCF1;
+}
+.btn{
+    background-color: #66FCF1 !important;
+    color: #1F2833 !important; 
+}
+button:active{
+    outline: none !important;
+    border: none !important;
+}
+.clicked{
+    color: #66FCF1;
+}
+.disp-none{
+    display: none;
+}
+
+.outer{
+    margin: auto;
+    background-color: #0B0C10;
+    width: 50%;
+    border-radius: 5px;
+}
+.form-heading{
+    color: white;
+}
+label{
+    color: white;
+}
+.outer button{
+    background-color: white !important;
+    color: #0B0C10 !important;
+    font-weight: bolder;
+}
+
+
+.prof-heading{
+    font-size: 2rem;
+    color: #66FCF1;
+    margin-top: 5%;
+    margin-left: 14%;
+}
+.profile-box{
+    font-family: 'Poppins', sans-serif !important;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: inherit;
+}
+.c-profile{
+    display: block;
+    padding: 0;
+    color: white;
+    line-height: 0.5;
+    font-size: 1.2rem;
+}
+.h-profile{
+    color: #66FCF1;
+    padding: 0;
+    line-height: 1;
+    font-size: 2rem;
+}
+.profile-img{
+    height: 100%;
+    width: 68%;
+    border-radius: 50%;
+}
