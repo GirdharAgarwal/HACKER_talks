@@ -9,7 +9,7 @@ import {NavLink,useHistory} from "react-router-dom";
 function register(){
     const history=useHistory();
     const [user,setUser]=useState({
-        name:"",about:"",username:"",email:"",pwd:"",cpwd:"",image:""
+        name:"",about:"",username:"",email:"",pwd:"",cpwd:""
     });
     const [otp,setOtp]=useState("");
     const [otpwindow,setOtpwindow]=useState(false);
@@ -20,11 +20,6 @@ function register(){
         value=event.target.value;
         setUser({...user,[name]:value}); //see use of []
         // console.log(user);  
-    }
-    function handleFile(e){
-        // console.log(e.target.files);
-        setUser({...user,"image":e.target.files[0]});
-        // console.log(user);
     }
     function handleOtp(event){
         setOtp(event.target.value);
@@ -55,7 +50,7 @@ function register(){
             window.alert(data.error);
             setOtpwindow(false);
             setUser({
-            name:"",about:"",username:"",email:"",pwd:"",cpwd:"",image:""
+            name:"",about:"",username:"",email:"",pwd:"",cpwd:""
             });
             setOtp("");
             history.push("/signup");
@@ -63,7 +58,7 @@ function register(){
     }
     const Postdata=async(e)=>{
         e.preventDefault();
-        const {name,about,username,email,pwd,cpwd,image}=user;
+        const {name,about,username,email,pwd,cpwd}=user;
         const formData=new FormData();
         formData.append("name",name);
         formData.append("about",about);
@@ -71,7 +66,6 @@ function register(){
         formData.append("email",email);
         formData.append("pwd",pwd);
         formData.append("cpwd",cpwd);
-        formData.append("image",image);
         const res=await fetch("/signup",{
             method:"POST",
             body:formData
@@ -128,10 +122,6 @@ function register(){
                  <label htmlFor="cpwd"><RiLockPasswordFill/></label>
                  <input type="password" name="cpwd" id="cpwd" autoComplete="nope" 
                  value={user.cpwd} onChange={handleChange} placeholder="Confirm Password"/>
-                 </div>
-                 <div className="form-group mb-5 mx-5">
-                 <label htmlFor="image"><ImUser/></label>
-                 <input type="file" filename="image" id="image" onChange={handleFile}/>
                  </div>
                  <button type="submit" className="btn btn-primary mx-5 mb-2" onClick={Postdata}>Sign up</button>
              </form>

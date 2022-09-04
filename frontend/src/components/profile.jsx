@@ -129,7 +129,7 @@ function profile(){
     return (
       <>
         <Disp username={userData.username} name={userData.name} 
-        email={userData.email} tokens={userData.tokens} about={userData.about} image={userData.image}/>
+        email={userData.email} tokens={userData.tokens} about={userData.about}/>
         {posts.length!=0 ? 
         <><p className="prof-heading">Posts:- </p>
         {posts.map(Displaypost)}</>:

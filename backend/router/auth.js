@@ -14,15 +14,15 @@ const Ans=require("../models/ansSchema");
 const mailer=require("../misc/mailer");
 router.use(cookieParser());
 const authenticate= require("../middleware/authenticate");
-const storage=multer.diskStorage({
-    destination:(req,file,callback)=>{
-        callback(null,"./client/public/uploads");
-    },
-    filename:(req,file,callback)=>{
-        callback(null,file.originalname);
-    }
-});
-const upload=multer({storage:storage});
+// const storage=multer.diskStorage({
+//     destination:(req,file,callback)=>{
+//         callback(null,"./client/public/uploads");
+//     },
+//     filename:(req,file,callback)=>{
+//         callback(null,file.originalname);
+//     }
+// });
+// const upload=multer({storage:storage});
 
 router.get("/getData",authenticate,async (req,res)=>{
     // console.log(req.rootUser);
@@ -60,8 +60,8 @@ router.post("/verifyOtp",async(req,res)=>{
     }
 });
 
-router.post("/signup",upload.single("image"),async function (req,res){
-    const {username,name,about,email,pwd,cpwd,image}=req.body;
+router.post("/signup",async function (req,res){
+    const {username,name,about,email,pwd,cpwd}=req.body;
     if(!username || !name || !email || !pwd || !cpwd)
     {
         return res.status(422).json({error:"Please fill the fields properly"});
@@ -78,9 +78,7 @@ router.post("/signup",upload.single("image"),async function (req,res){
     let userExists=await User.findOne({username:username});
     if(userExists)
         return res.status(422).json({error:"Username exists"});
-    let imagename="Unknown.jpg";    
-    if(req.file!=undefined)
-    imagename=req.file.originalname;
+    let imagename="Unknown.jpg";
     const user=new User({
             username,name,about,email,pwd,image:imagename
         });
