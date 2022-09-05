@@ -1,5 +1,6 @@
 const mongoose=require("mongoose");
 const dotenv=require("dotenv");
+dotenv.config({path : '../config.env'});
 const CONNECTION_URL=process.env.CONNECTION_URL;
 // console.log(CONNECTION_URL);
 
