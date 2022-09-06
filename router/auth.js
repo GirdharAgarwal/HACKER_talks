@@ -157,12 +157,13 @@ router.get("/verify",authenticate,(req,res)=>{
 
 router.get("/getpostUpload",async function(req,res){
      try{
+         console.log("hello");
          const p=await Post.find({}).sort({"date":-1,"like":-1,"unlike":1,"username":1});
          res.send(p);
      }
      catch(err){
-        console.log("ERROR - "+err);
-         res.send([]);
+        // console.log("ERROR - "+err);
+        res.send([]);
      }
 });
 
