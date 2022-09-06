@@ -16,8 +16,7 @@ function home(){
                 Accept:"application/json",
                 "Content-Type":"application/json"
             },
-            credentials:"include"  
-            //so cookies/tokens can be share to backend
+            credentials:"include"
         });
         const data=await res.json();
         if(res.status!=200)
@@ -66,7 +65,7 @@ function home(){
     }
     const callHomePage=async ()=>{
       try{
-        const res=await fetch("/getpostsortbyUploadDate");
+        const res=await fetch("/getpostUpload");
         const data=await res.json();
         setPostData(data);
         if(res.status!=200)

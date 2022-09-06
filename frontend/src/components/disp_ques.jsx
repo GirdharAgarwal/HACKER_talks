@@ -191,7 +191,7 @@ function home(props){
           }
           else{
             // console.log(data.username);
-            setUser(data.username);
+            // setUser(data.username);
             dispatch({type:"USER",payload:true});
           }
         }

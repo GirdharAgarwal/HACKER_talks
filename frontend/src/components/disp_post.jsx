@@ -1,11 +1,13 @@
-import react, { useState,useEffect} from "react";
+import react, {useContext,useState,useEffect} from "react";
 import reactDom from "react-dom";
 import {ImArrowUp} from "react-icons/im";
 import {ImArrowDown} from "react-icons/im";
 import { useParams } from "react-router";
 import {useHistory} from "react-router-dom";
+import {UserContext} from "../app";
 
 function home(props){
+    const {state,dispatch}=useContext(UserContext);
     const history=useHistory();
     let {id,subj,content,username,like,unlike,date,likeusers,unlikeusers,likec,unlikec}=props;
     var d=new Date(date);
@@ -13,6 +15,7 @@ function home(props){
     const [UnlikeCount,setUnlikeCount]=useState(unlikeusers.length);
     const [likeClicked,setLikeClicked]=useState(likec);
     const [unlikeClicked,setUnlikeClicked]=useState(unlikec);
+    const [activeuser,setUser]=useState();
     const handleLike=async (e)=>{
         try{
         const res=await fetch("/like",{
@@ -89,9 +92,9 @@ function home(props){
               throw err;
           }
           else{
+            dispatch({type:"USER",payload:true});
             // console.log(data.username);
             setUser(data.username);
-            dispatch({type:"USER",payload:true});
           }
         }
         catch(err){
